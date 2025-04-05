@@ -1,0 +1,14 @@
+<div class="modal-backdrop" (click)="onClose()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <span class="close-button" (click)="onClose()">✖</span>
+
+    <h3>{{ title }}</h3>
+    <img [src]="imageSrc" [alt]="title" loading="lazy" style="width: 100%; border-radius: 8px;" />
+    <p>{{ description }}</p>
+
+    <div class="navigation-buttons">
+      <button (click)="onPrev()" [disabled]="currentIndex === 0">⏮️ Previous</button>
+      <button (click)="onNext()" [disabled]="currentIndex === totalItems - 1">Next ⏭️</button>
+    </div>
+  </div>
+</div>

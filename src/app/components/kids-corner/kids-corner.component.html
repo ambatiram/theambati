@@ -1,0 +1,29 @@
+<div id="kids-corner" class="kids-highlights">
+    <h2>Kid’s Highlights</h2>
+    <ul class="timeline">
+      <li *ngFor="let event of timelineEvents; index as i" class="fade-in-on-scroll">
+        <!-- Clickable Image to Open Modal -->
+        <div class="timeline-icon" (click)="openModal(i)">
+          <img [src]="event.image" [alt]="event.title" />
+        </div>
+        <div class="date">{{ event.date }}</div>
+        <div class="event">{{ event.title }}</div>
+        <div class="description">{{ event.description }}</div>
+      </li>
+    </ul>
+  </div>
+  
+
+  <app-modal
+  *ngIf="selectedEvent"
+  [title]="selectedEvent.title"
+  [imageSrc]="selectedEvent.largeImage"
+  [description]="selectedEvent.description"
+  [currentIndex]="selectedIndex"
+  [totalItems]="timelineEvents.length"
+  (close)="closeModal()"
+  (next)="nextEvent()"
+  (prev)="prevEvent()"
+></app-modal>
+
+  

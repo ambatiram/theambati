@@ -1,0 +1,26 @@
+<div id="vacations"  class="vacations">
+    <h2>Recent Vacations</h2>
+
+    <div class="vacation-card" class="vacation-card" *ngFor="let vacation of vacations; let i = index">
+        <img [src]="vacation.image" [alt]="vacation.title" loading="lazy" />
+
+        <div class="card-content">
+            <h3>{{ vacation.title }}</h3>
+            <p>{{ vacation.description }}</p>
+        </div>
+    </div>
+  
+    <!-- <div
+      class="vacation-card"
+      *ngFor="let vacation of vacations; let i = index"
+      [ngStyle]="{ '--delay': (i * 0.2) + 's' }"
+    >
+      <img [src]="vacation.image" [alt]="vacation.title" loading="lazy" />
+      <div class="vacation-details">
+        <h3>{{ vacation.title }}</h3>
+        <p class="date">{{ vacation.date }}</p>
+        <p>{{ vacation.description }}</p>
+      </div>
+    </div> -->
+  </div>
+  
