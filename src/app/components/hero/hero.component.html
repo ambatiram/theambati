@@ -3,8 +3,18 @@
       <h1>Welcome to the Ambati Chronicles</h1>
       <p>Capturing our beautiful journey — one moment at a time.</p>
     </div>
-    <div class="scroll-down">
-      ↓
+    <div class="bingo-container">
+      <img
+        src="assets/bingo-walking.gif"
+        alt="Bingo"
+        class="bingo"
+        #bingoRef
+        (click)="togglePause(bingoRef)"
+        (mouseenter)="playBark()"
+      />
     </div>
+    <!-- <div class="scroll-down">
+      ↓
+    </div> -->
   </section>
   

@@ -1,7 +1,7 @@
 <div id="vacations"  class="vacations">
     <h2>Recent Vacations</h2>
 
-    <div class="vacation-card" class="vacation-card" *ngFor="let vacation of vacations; let i = index">
+    <div class="vacation-card" class="vacation-card" *ngFor="let vacation of vacations; let i = index" (click)="openModal(i)">
         <img [src]="vacation.image" [alt]="vacation.title" loading="lazy" />
 
         <div class="card-content">
@@ -9,18 +9,19 @@
             <p>{{ vacation.description }}</p>
         </div>
     </div>
-  
-    <!-- <div
-      class="vacation-card"
-      *ngFor="let vacation of vacations; let i = index"
-      [ngStyle]="{ '--delay': (i * 0.2) + 's' }"
-    >
-      <img [src]="vacation.image" [alt]="vacation.title" loading="lazy" />
-      <div class="vacation-details">
-        <h3>{{ vacation.title }}</h3>
-        <p class="date">{{ vacation.date }}</p>
-        <p>{{ vacation.description }}</p>
-      </div>
-    </div> -->
   </div>
   
+<!-- Shared Modal -->
+
+<app-modal-popup *ngIf="isModalOpen" (close)="closeModal()">
+    <h2>{{ selectedVacation?.title }}</h2>
+    <p><strong>Date:</strong> {{ selectedVacation?.date }}</p>
+    <div class="itinerary">{{ selectedVacation?.itinerary }}</div> <!-- Use a div for styling -->
+
+    <!-- Image Slider -->
+    <div class="slider">
+        <button class="prev" (click)="prevImage()">&#10094;</button>
+        <img [src]="selectedVacation?.images[currentImageIndex]" [alt]="selectedVacation?.title" />
+        <button class="next" (click)="nextImage()">&#10095;</button>
+    </div>
+</app-modal-popup>

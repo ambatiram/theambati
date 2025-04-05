@@ -66,3 +66,32 @@
   }
 }
 
+.bingo-container {
+  position: absolute;
+  bottom: 20px;
+  left: -100px;
+  width: 100%;
+}
+
+.bingo {
+  height: 180px;
+  animation: walkAcross 10s linear infinite;
+  transition: transform 0.3s ease;
+  pointer-events: auto;
+  cursor: pointer;
+  position: relative;
+  z-index: 10; /* Ensure it is above other elements */
+}
+
+.bingo.paused {
+  animation-play-state: paused;
+}
+
+@keyframes walkAcross {
+  0% {
+    transform: translateX(-150px);
+  }
+  100% {
+    transform: translateX(110vw);
+  }
+}

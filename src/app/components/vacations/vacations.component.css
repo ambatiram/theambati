@@ -72,3 +72,48 @@
     font-size: 0.9rem;
     color: #6c757d;
   }
+
+
+
+  .slider {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .slider img {
+    max-width: 100%;
+    max-height: 300px;
+  }
+  
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  .prev {
+    left: 10px;
+  }
+  
+  .next {
+    right: 10px;
+  }
+
+  .no-scroll {
+    overflow: hidden;
+  }
+
+  .itinerary {
+    white-space: pre-line; /* Preserves line breaks */
+    font-size: 1rem;
+    color: #343a40;
+    line-height: 1.6;
+  }
