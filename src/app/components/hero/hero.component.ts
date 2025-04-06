@@ -25,12 +25,6 @@ export class HeroComponent implements OnInit {
     }
   }
 
-  playBark() {
-    console.log('Bark!');
-    this.barkSound.currentTime = 0;
-    this.barkSound.play();
-  }
-
   bark() {
     this.barkSound.currentTime = 0;
     this.barkSound.play();
