@@ -1,14 +1,21 @@
 <header class="header">
-    <div class="logo-title">
-      <img src="assets/logo.png" alt="Ambati Logo" class="logo">
-      <span class="site-title"></span>
-    </div>
-    <nav class="nav-links">
-      <a routerLink="/" routerLinkActive="active">Home</a>
-      <a href="#kids-corner" routerLinkActive="active">Kid’s Corner</a>
-      <a href="#vacations" routerLinkActive="active">Vacations</a>
-      <a routerLink="/gallery" routerLinkActive="active">Gallery</a>
-      <a routerLink="/about" routerLinkActive="active">About</a>
-    </nav>
-  </header>
-  
+  <div class="logo-title">
+    <img src="assets/logo.png" alt="Ambati Logo" class="logo">
+  </div>
+
+  <!-- Hamburger Menu Icon -->
+  <div class="hamburger" (click)="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Navigation Links -->
+  <nav class="nav-links" [class.active]="isMenuOpen">
+    <a routerLink="/" routerLinkActive="active">Home</a>
+    <a href="#kids-corner" routerLinkActive="active">Kid’s Corner</a>
+    <a href="#vacations" routerLinkActive="active">Vacations</a>
+    <a routerLink="/gallery" routerLinkActive="active">Gallery</a>
+    <a routerLink="/about" routerLinkActive="active">About</a>
+  </nav>
+</header>

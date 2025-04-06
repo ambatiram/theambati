@@ -9,8 +9,9 @@
         alt="Bingo"
         class="bingo"
         #bingoRef
-        (click)="togglePause(bingoRef)"
-        (mouseenter)="playBark()"
+        (mouseenter)="bark()"
+        (click)="bark()"
+        (touchstart)="bark()"
       />
     </div>
     <!-- <div class="scroll-down">

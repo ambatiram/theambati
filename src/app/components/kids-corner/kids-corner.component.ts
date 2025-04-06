@@ -13,10 +13,17 @@ export class KidsCornerComponent implements AfterViewInit {
 
   timelineEvents = [
     { 
-      date: 'Jan 2020', 
+      date: '26 August 2018', 
+      title: 'Born into the World', 
+      image: '/assets/kids/birth.jpg', 
+      largeImage: '/assets/kids/birth.jpg',
+      description: 'The day our little bundle of joy arrived and changed our lives forever.'
+    },
+    { 
+      date: '13 October 2019', 
       title: 'First Steps', 
-      image: '/assets/kids/andaman.jpg', 
-      largeImage: '/assets/kids/andaman.jpg',
+      image: '/assets/kids/first-steps.jpg', 
+      largeImage: '/assets/kids/first-steps.jpg',
       description: 'Our little one took their very first steps! A magical moment filled with wobbles and giggles.' 
     },
     { 

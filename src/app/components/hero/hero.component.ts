@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-hero',
@@ -6,10 +6,14 @@ import { Component } from '@angular/core';
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.css'
 })
-export class HeroComponent {
+export class HeroComponent implements OnInit {
 
   isPaused = false;
-  audio = new Audio('/assets/sounds/bingo-bark.wav');
+  barkSound = new Audio('/assets/sounds/bingo-bark.wav');
+
+  ngOnInit() {
+    this.barkSound = new Audio('/assets/sounds/bingo-bark.wav');
+  }
 
   togglePause(bingo: HTMLElement) {
     console.log('Toggling pause');
@@ -23,7 +27,12 @@ export class HeroComponent {
 
   playBark() {
     console.log('Bark!');
-    this.audio.currentTime = 0;
-    this.audio.play();
+    this.barkSound.currentTime = 0;
+    this.barkSound.play();
+  }
+
+  bark() {
+    this.barkSound.currentTime = 0;
+    this.barkSound.play();
   }
 }
